@@ -224,7 +224,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 //        Disposable
 
-        if(binding.placeText.getText().toString().matches("") || binding.placeText.getText().toString().matches(" ") ){
+        if(binding.placeText.getText().toString().replaceAll("\\s+", " ").trim().matches("")){
             Toast toast = Toast.makeText(MapsActivity.this, "Enter a name for the place", Toast.LENGTH_LONG);
             toast.show();
         }else {
